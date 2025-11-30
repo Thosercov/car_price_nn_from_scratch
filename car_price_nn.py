@@ -1,9 +1,8 @@
 import pandas as pd
+import data_prep as pd
 
-car_data_df = pd.read_csv('./archive/CarPrice_Assignment.csv', engine='pyarrow', dtype_backend='pyarrow')
+input_data = pd.get_input()
 
-car_data_df = car_data_df.dropna()
-
-print(car_data_df.info())
+print(input_data)
 
 
