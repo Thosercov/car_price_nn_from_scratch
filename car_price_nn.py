@@ -6,3 +6,4 @@ car_data_df = car_data_df.dropna()
 
 print(car_data_df.info())
 
+
