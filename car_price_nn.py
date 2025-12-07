@@ -1,9 +1,8 @@
 import pandas as pd
 import numpy as np
 import data_prep as dp
+import constants as c
 
-num_of_layers = 3
-num_of_features = 64
 inputs = dp.get_inputs() #pandas turns it into numpy.ndarray
 inputs = inputs.drop_duplicates()
 
@@ -11,12 +10,12 @@ np.random.seed(0)
 
 weights = []
 weights2 = []
-for i in range (0, num_of_layers):
-    weights.append(np.random.uniform(-1, 1, num_of_features))
-    weights2.append(np.random.uniform(-1, 1, 3))
+for i in range (0, c.NUM_OF_NEURONS_L1):
+    weights.append(np.random.uniform(-1, 1, c.NUM_OF_FEATURES))
+    weights2.append(np.random.uniform(-1, 1, c.NUM_OF_NEURONS_L1))
 
-biases = np.random.randint(-2, 2, 3) # -2, 1, -1
-biases2 = np.random.randint(-2, 2, 3) # 1, -1, -1
+biases = np.random.randint(-2, 2, c.NUM_OF_NEURONS_L1) # -2, 1, -1
+biases2 = np.random.randint(-2, 2, c.NUM_OF_NEURONS_L2) # 1, -1, -1
 
 weights = np.array(weights)
 weights2 = np.array(weights2)
