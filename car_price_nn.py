@@ -5,6 +5,7 @@ import data_prep as dp
 num_of_layers = 3
 num_of_features = 64
 inputs = dp.get_inputs() #pandas turns it into numpy.ndarray
+inputs = inputs.drop_duplicates()
 
 np.random.seed(0)
 
@@ -23,10 +24,10 @@ weights2 = np.array(weights2)
 layer1_outputs = np.dot(inputs, weights.T) + biases
 layer2_outputs = np.dot(layer1_outputs, weights2.T) + biases2
 
-print(inputs.values)
+print(weights)
+
 #print(layer1_outputs.shape) #205, 3
 #print(layer1_outputs.ndim) #2
-
 
 
 
