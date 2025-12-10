@@ -1,3 +1,3 @@
-NUM_OF_NEURONS_L1 = 4
-NUM_OF_NEURONS_L2 = 3
-NUM_OF_FEATURES = 64
+n_neurons_l1 = 3
+n_neurons_l2 = 4
+n_inputs= 64
