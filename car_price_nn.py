@@ -11,13 +11,19 @@ if __name__ == '__main__':
     inputs = dp.get_inputs() #pandas turns it into numpy.ndarray
     inputs = inputs.drop_duplicates()
 
-    np.random.seed(3)
+    np.random.seed(1)
 
     layer1 = Layer(c.N_INPUTS, c.N_NEURONS_L1)
 
     activation1 = Activation_ReLU()
 
-    layer1.forward(inputs)
+    standardization_Z_score = Standardization_Z_score()
+    standardized_inputs = standardization_Z_score.standardize(inputs)
+
+    layer1.forward(standardized_inputs)
 
     activation1.forward(layer1.output)
 
+    print(activation1.output)
+
+    
