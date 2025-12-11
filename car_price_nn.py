@@ -11,7 +11,7 @@ if __name__ == '__main__':
     inputs = dp.get_inputs() #pandas turns it into numpy.ndarray
     inputs = inputs.drop_duplicates()
 
-    np.random.seed(1)
+    np.random.seed(0)
 
     layer1 = Layer(c.N_INPUTS, c.N_NEURONS_L1)
 
@@ -25,5 +25,7 @@ if __name__ == '__main__':
     activation1.forward(layer1.output)
 
     print(activation1.output)
+
+
 
     
