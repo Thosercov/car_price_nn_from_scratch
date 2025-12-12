@@ -9,8 +9,8 @@ from standardization_z_score import Standardization_Z_score
 
 if __name__ == '__main__':
 
-    inputs = dp.get_inputs() #pandas turns it into numpy.ndarray
-    inputs = inputs.drop_duplicates()
+    data = dp.get_data(c.PATH_TO_FILE)
+    inputs = dp.get_inputs(data) #pandas turns it into numpy.ndarray
     standardization_Z_score = Standardization_Z_score()
     standardized_inputs = standardization_Z_score.standardize(inputs)
 
