@@ -9,8 +9,8 @@ from standardization_z_score import Standardization_Z_score
 
 if __name__ == '__main__':
 
-    data = dp.get_data(c.PATH_TO_FILE)
-    inputs = dp.get_inputs(data) #pandas turns it into numpy.ndarray
+    data, inputs, targets = dp.get_data(c.PATH_TO_FILE) #pandas turns it into numpy.ndarray
+
     standardization_Z_score = Standardization_Z_score()
     standardized_inputs = standardization_Z_score.standardize(inputs)
 
@@ -26,7 +26,8 @@ if __name__ == '__main__':
     layer2.forward(activation1.output)
     activation2.forward(layer2.output)
 
-    print(activation1.output)
+    print(activation2.output)
+
 
 
 
