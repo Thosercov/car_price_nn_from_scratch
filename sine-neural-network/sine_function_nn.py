@@ -37,9 +37,11 @@ if __name__ == '__main__':
     layer4 = Layer(c.N_LAYER_3_NEURONS, c.N_LAYER_4_NEURONS)
     layer4.forward(activation3.output)
 
-    activation4 = Activation_ReLU()
+    activation4 = Activation_linear()
     activation4.forward(layer4.output)
 
-    print(activation4.output)
+    plt.scatter(x_samples,activation4.output)
+    plt.scatter(x_samples, y_samples)
+    plt.show()
 
 
