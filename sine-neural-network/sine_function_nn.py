@@ -4,6 +4,7 @@ import constants as c
 from layer import Layer
 from activation_relu import Activation_ReLU
 from activation_linear import Activation_linear
+from loss_mean_squared_error import Loss_mean_squared_error
 
 if __name__ == '__main__':
 
@@ -40,8 +41,13 @@ if __name__ == '__main__':
     activation4 = Activation_linear()
     activation4.forward(layer4.output)
 
-    plt.scatter(x_samples,activation4.output)
-    plt.scatter(x_samples, y_samples)
-    plt.show()
+    #loss
+    loss_mean_squared_error = Loss_mean_squared_error()
+
+    print(loss_mean_squared_error.forward(y_pred=activation4.output, y_true=y_samples))
+
+    #plt.scatter(x_samples,activation4.output)
+    #plt.scatter(x_samples, y_samples)
+    #plt.show()
 
 
